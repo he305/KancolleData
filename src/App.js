@@ -10,6 +10,10 @@ var Contacts = [
   {
     "name" : "Kaga",
     "id" : 2
+  },
+  {
+    "name" : "Akagi",
+    "id" : 3
   }
 ];
 
