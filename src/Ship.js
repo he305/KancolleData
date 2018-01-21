@@ -24,7 +24,7 @@ class ShipList extends Component {
     handleSearch(event) {
         var searchQuery = event.target.value.toLowerCase();
         var ships = ships_data.filter(function(el) {
-        var searchValue = el.Name.toLocaleLowerCase();
+        var searchValue = el.name.toLocaleLowerCase();
         return searchValue.indexOf(searchQuery) !== -1;
         });
 
@@ -36,7 +36,7 @@ class ShipList extends Component {
     render() {
         return (
         <div>
-            <input type="text" onChange={this.handleSearch} />
+            <input placeholder="Type ship name" type="text" onChange={this.handleSearch} />
             <ul>
             {
                 this.state.ships.map(function (el) {

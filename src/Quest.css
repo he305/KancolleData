@@ -3,6 +3,20 @@
 }
 
 td {
-    width: 20%;
+    width: 30%;
     text-align: center;
+    
+    padding: 20px;
+}
+
+tr {
+    border-bottom: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.questName {
+    width: 10%;
 }

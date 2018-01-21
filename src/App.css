@@ -34,3 +34,8 @@ li {
 .nav li {
   margin-right: 10px
 }
+
+.logo {
+  width: 5%;
+  height: 5%;
+}
