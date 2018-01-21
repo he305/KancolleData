@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import {HashRouter} from 'react-router-dom';
+
 import './index.css';
 import App from './App';
+import Ship from './Ship';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <App />,
+document.getElementById('root'));
 registerServiceWorker();
