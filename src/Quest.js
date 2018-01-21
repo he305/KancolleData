@@ -14,8 +14,6 @@ class Quest extends Component {
     convertNote(data) {
         var pattern = /[^><#][A-z]+\d+/g;
         if (data.match(pattern) != null && data.match(pattern) != undefined) {
-            console.log(data.match(pattern));
-
             data.match(pattern).map(function(match) {
                 var new_data = match.replace(/\s/g, '');
                 data = data.replace(match, " <a href=#" + new_data + ">" + new_data + "</a>")

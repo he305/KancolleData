@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import ships_data from './ships.json'
 import './App.css'
 
@@ -7,7 +8,8 @@ class Ship extends Component {
       return (
         <li>
           <div>{this.props.element.name}</div>
-          <a href="https://google.com"><img src={this.props.element.stats[this.props.element.stats.length-1].image} /></a>
+          <Link to={'/ship/' + this.props.element.name}>
+          <img src={this.props.element.stats[this.props.element.stats.length-1].image}></img></Link>
         </li>
       );
     }

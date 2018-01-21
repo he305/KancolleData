@@ -1,0 +1,9 @@
+.shipTable {
+    border: 1px solid;
+}
+
+.shipinfotable {
+    margin-bottom: 20px;
+    width: 33%;
+    display: inline-block;
+}
