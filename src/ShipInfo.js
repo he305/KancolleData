@@ -6,6 +6,7 @@ class ShipInfoTable extends Component {
     constructor(props) {
         super(props);
         this.state = {element : this.props.element}
+        window.scrollTo(0, 0);
     }
 
     render() {
@@ -17,10 +18,13 @@ class ShipInfoTable extends Component {
                     <td colspan="4">{this.state.element.japanese_name}</td>
                 </tr>
                 <tr>
-                    <td colspan="4"><img src={this.state.element.image}></img></td>
+                    <td colspan="4"><img alt="image lost" src={this.state.element.image}></img></td>
                 </tr>
                 <tr>
                     <td colspan="4">{this.state.element.description}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Remodel level: {this.state.element.remodel_level}</td>
                 </tr>
                 <tr>
                     <td>HP</td>

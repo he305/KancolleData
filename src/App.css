@@ -39,3 +39,11 @@ li {
   width: 5%;
   height: 5%;
 }
+
+header {
+}
+
+h1 {
+  float: right;
+  width: 20%;
+}

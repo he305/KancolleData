@@ -9,7 +9,7 @@ class Ship extends Component {
         <li>
           <div>{this.props.element.name}</div>
           <Link to={'/ship/' + this.props.element.name}>
-          <img src={this.props.element.stats[this.props.element.stats.length-1].image}></img></Link>
+          <img alt='logo' src={this.props.element.stats[this.props.element.stats.length-1].image}></img></Link>
         </li>
       );
     }

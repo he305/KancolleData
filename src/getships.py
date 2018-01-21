@@ -42,7 +42,9 @@ def parse_ship_data(html):
         remodel_data['image'] = rows[1].find('a', href=True)['href']
 
         if rows[11].find('td').b.text == "Remodel Level":
-            remodel_data["remodel Level"] = rows[12].find('td').b.text
+            remodel_data["remodel_level"] = rows[12].find('td').b.text
+        else:
+            remodel_data['remodel_level'] = 1
 
         equipment = [
             rows[14].find_all('td')[1].text.strip(),

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import ships_data from './ships.json';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 import Ship from './Ship';
 import Quest from './Quest';
@@ -13,7 +12,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Link to='/'><img className="logo" src={logo}></img></Link>
+          <header>
+            <Link to='/'><img className="logo" alt="logo" src={logo}></img></Link>
+            <h1>he305 Kancolle DB</h1>
+          </header>
           <ul className="nav">
             <li><Link to={'/Quests'}>Quests</Link></li>
             <li><Link to={'/Ship'}>Ship list</Link></li>
