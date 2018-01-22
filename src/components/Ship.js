@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import ships_data from '../data/ships.json'
-import '../styles/App.css'
+import ships_data from '../data/ships.json';
+import '../styles/App.css';
+import '../styles/Ship.css';
 
 class Ship extends Component {
     render() {
@@ -39,11 +40,11 @@ class ShipList extends Component {
         return (
         <div>
             <input placeholder="Type ship name" type="text" onChange={this.handleSearch} />
-            <ul>
+            <ul className ="shiplist">
             {
                 this.state.ships.map(function (el) {
                 return ( 
-                    <Ship element={el}/>
+                    <Ship element={el} key={el.name}/>
                 );
                 })
             }

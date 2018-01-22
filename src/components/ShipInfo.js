@@ -12,19 +12,19 @@ class ShipInfoTable extends Component {
     render() {
         return (
             <div className="shipinfotable">
-            <table class="shipTable">
+            <table className="shipTable">
             <tbody>
                 <tr>
-                    <td colspan="4">{this.state.element.japanese_name}</td>
+                    <td colSpan="4">{this.state.element.japanese_name}</td>
                 </tr>
                 <tr>
-                    <td colspan="4"><img alt="image lost" src={this.state.element.image}></img></td>
+                    <td colSpan="4"><img alt="image lost" src={this.state.element.image}></img></td>
                 </tr>
                 <tr>
-                    <td colspan="4">{this.state.element.description}</td>
+                    <td colSpan="4">{this.state.element.description}</td>
                 </tr>
                 <tr>
-                    <td colspan="4">Remodel level: {this.state.element.remodel_level}</td>
+                    <td colSpan="4">Remodel level: {this.state.element.remodel_level}</td>
                 </tr>
                 <tr>
                     <td>HP</td>
@@ -76,17 +76,12 @@ class ShipInfo extends Component {
         
         var data = []
         this.state.ships.map(function(element) {
-            console.log(typeof(element.name));
             if (props.match.params.ship === element.name) {
                 data = element.stats;
-                console.log('found');
-                console.log(data);
 
                 this.state =  {ship : this.props.match.params.ship, ships : ships_data, data : data};
             }
         }.bind(this));
-
-        console.log(this.state);
     }
 
     render() {
@@ -94,7 +89,7 @@ class ShipInfo extends Component {
         {
             this.state.data.map(function(element) {
                 return (
-                    <ShipInfoTable element={element} />
+                    <ShipInfoTable element={element} key={element.name} />
                 )
             })
         }

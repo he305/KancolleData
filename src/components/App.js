@@ -6,6 +6,7 @@ import Ship from './Ship';
 import Quest from './Quest';
 import ShipInfo from './ShipInfo';
 import Home from './Home';
+import Event from './Event';
 
 import logo from '../Kantai_logo.png';
 
@@ -20,8 +21,9 @@ class App extends Component {
             <h1>he305 Kancolle DB</h1>
           </header>
           <ul className="nav">
-            <li><Link to={'/Quests'}>Quests</Link></li>
-            <li><Link to={'/Ship'}>Ship list</Link></li>
+            <li><Link to={'/quests'}>Quests</Link></li>
+            <li><Link to={'/ship'}>Ship list</Link></li>
+            <li><Link to={'/event'}>Event info</Link></li>
           </ul>
           <hr/>
           <Switch>
@@ -29,6 +31,7 @@ class App extends Component {
             <Route exact path='/quests' component={Quest} />
             <Route exact path='/ship' component={Ship} />
             <Route path='/ship/:ship' component={ShipInfo} />
+            <Route exact path='/event' component={Event} />
           </Switch>
         </div>
       </BrowserRouter>
