@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import '../styles/App.css';
+import {BrowserRouter, Switch, Route, Link, IndexRedirect} from 'react-router-dom';
+
 import Ship from './Ship';
 import Quest from './Quest';
 import ShipInfo from './ShipInfo';
-import logo from './Kantai_logo.png';
+import Home from './Home';
+
+import logo from '../Kantai_logo.png';
 
 
 class App extends Component {
@@ -22,6 +25,7 @@ class App extends Component {
           </ul>
           <hr/>
           <Switch>
+            <Route exact path='/' component={Home}/>
             <Route exact path='/quests' component={Quest} />
             <Route exact path='/ship' component={Ship} />
             <Route path='/ship/:ship' component={ShipInfo} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import ships_data from './ships.json'
-import './App.css'
+import ships_data from '../data/ships.json'
+import '../styles/App.css'
 
 class Ship extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ships_data from './ships.json';
-import './ShipInfo.css';
+import ships_data from '../data/ships.json';
+import '../styles/ShipInfo.css';
 
 class ShipInfoTable extends Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import quests_data from './quests.json';
-import './Quest.css';
+import quests_data from '../data/quests.json';
+import '../styles/Quest.css';
 
 class Quest extends Component {
 
