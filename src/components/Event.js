@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import '../styles/Event.css'
+import historical from '../Winter_2018.jpg';
 
 class Event extends Component {
     render() {
@@ -8,7 +9,7 @@ class Event extends Component {
             <Tabs>
                 <TabList>
                     <Tab><input type="button" value="Combined fleet"/></Tab>
-                    <Tab><input type="button" value="Tagging"/></Tab>
+                    <Tab><input type="button" value="Winter 2018 historical"/></Tab>
                 </TabList>
 
                 <TabPanel>
@@ -75,7 +76,7 @@ class Event extends Component {
                     </Tabs>
                 </TabPanel>
                 <TabPanel>
-                    <h3>In progress</h3>
+                    <img src={historical}></img>
                 </TabPanel>
             </Tabs>
         )

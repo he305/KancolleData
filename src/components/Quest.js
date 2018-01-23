@@ -15,7 +15,7 @@ class Quest extends Component {
         var pattern = /[^><#][A-z]+\d+/g;
         if (data.match(pattern) !== null && data.match(pattern) !== undefined) {
             data.match(pattern).map(function(match) {
-                var new_data = match.replace(/\s/g, '');
+                var new_data = match.replace(/[:,\s]/g, '');
                 data = data.replace(match, " <a href=#" + new_data + ">" + new_data + "</a>")
             })
             

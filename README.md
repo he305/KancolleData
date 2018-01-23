@@ -2,6 +2,7 @@
             <h3>TODO list:</h3>
             <ol className="homelist" type="1">
                 <li><del>Fix routing</del></li>
+                <li><del>Fix quest urls</del></li>
                 <li>Fix rewards on quest page</li>
                 <li>Fix render of ship info</li>
                 <li>Parse map pages</li>
