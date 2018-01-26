@@ -1,19 +1,17 @@
 <template>
-<table border="1px solid">
-    <tbody>
-        <tr>
-            <th>Name</th>
-            <th>Requirements</th>
-            <th>Resources</th>
-            <th>Rewards</th>
-            <th>Notes</th>
-        </tr>
-    </tbody>
-    <tr v-for="quest in quests">
-        <td :id="quest.name">{{quest.name}}</td>
+<table class="questTable">
+    <tr>
+        <th>Name</th>
+        <th>Requirements</th>
+        <th>Resources</th>
+        <th>Rewards</th>
+        <th>Notes</th>
+    </tr>
+    <tr v-for="quest in quests" :key="quest.name">
+        <td class="questName" :id="quest.name">{{quest.name}}</td>
         <td>{{quest.requirements}}</td>
         <td>{{quest.resources}}</td>
-        <td>{{quest.rewards}}</td>
+        <td class="rewards">{{quest.rewards}}</td>
         <td v-html="convertNote(quest.note)"></td>
     </tr>
 </table>  
@@ -45,5 +43,17 @@ export default {
 </script>
 
 <style scoped>
+
+.questTable tr td{
+    border: 1px solid;
+    padding: 20px;
+    width: 20%;
+    text-align: center;
+}
+
+.questTable {
+    border-collapse: collapse;
+    display: block;
+}
 
 </style>

@@ -1,21 +1,11 @@
-# vuetest
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<h2>Welcome to personal he305 Kancolle DB</h2>
+      <h3>TODO list:</h3>
+      <ol className="homelist" type="1">
+          <li><del>Fix routing</del></li>
+          <li><del>Migrate to vue</del></li>
+          <li>Fix rewards on quest page</li>
+          <li>Fix render of ship info</li>
+          <li>Parse map pages</li>
+      </ol>
+      <p>All information was taken from <a href="http://kancolle.wikia.com">Kancolle Wiki</a></p>
+      <p><a href="https://github.com/he305/KancolleData">Github repo</a></p>

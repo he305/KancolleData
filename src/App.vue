@@ -1,10 +1,15 @@
 <template>
   <div id="app">
+    <header>
     <router-link to='/'><img id="logo" src="./assets/logo.png" /></router-link>
+    <h2 class="siteName">he305 Kancolle DB</h2>
+    </header>
     <nav>
       <router-link to='/quests'>Quests</router-link>
       <router-link to="/ships">Ship list</router-link>
+      <router-link to="/event">Event</router-link>
     </nav>
+    <hr>
     <router-view/>
   </div>
 </template>
@@ -31,5 +36,14 @@ export default {
 
 nav {
   margin-bottom: 10px;
+}
+
+.siteName {
+  float: right;
+  width: 25%;
+}
+
+a {
+  color: #42b983;
 }
 </style>
