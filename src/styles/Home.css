@@ -1,8 +1,0 @@
-.homelist li {
-    display: block;
-    display: list-item;
-}
-
-.homelist {
-    list-style-type: decimal;
-}

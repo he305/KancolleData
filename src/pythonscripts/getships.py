@@ -16,7 +16,7 @@ def parse_ship_data(html):
     
     name = tables[0].find_all('tr')[0].td.p.span.b.text
 
-    data['name'] = name
+    data['name'] = name.strip()
 
     data['stats'] = []
     
