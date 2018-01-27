@@ -42,4 +42,8 @@ ul {
     padding: 0;
     margin: 0;
 }
+
+input {
+    margin-bottom: 15px;
+}
 </style>

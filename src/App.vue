@@ -35,7 +35,7 @@ export default {
 }
 
 nav {
-  margin-bottom: 10px;
+  margin: 10px 0px 0px 0px;
 }
 
 .siteName {

@@ -1,5 +1,5 @@
 <template>
-      <div>
+      <div class="homeRoot">
       <h2>Welcome to personal he305 Kancolle DB</h2>
       <h3>TODO list:</h3>
       <ol className="homelist" type="1">
@@ -39,5 +39,9 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.homeRoot {
+  margin: 10px;
 }
 </style>

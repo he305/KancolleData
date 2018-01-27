@@ -8,4 +8,3 @@
           <li>Parse map pages</li>
       </ol>
       <p>All information was taken from <a href="http://kancolle.wikia.com">Kancolle Wiki</a></p>
-      <p><a href="https://github.com/he305/KancolleData">Github repo</a></p>

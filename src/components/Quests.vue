@@ -1,6 +1,6 @@
 <template>
-<table class="questTable">
-    <tr>
+<table class="questTable table">
+    <tr class="thead-dark">
         <th>Name</th>
         <th>Requirements</th>
         <th>Resources</th>
@@ -11,7 +11,7 @@
         <td class="questName" :id="quest.name">{{quest.name}}</td>
         <td>{{quest.requirements}}</td>
         <td>{{quest.resources}}</td>
-        <td class="rewards">{{quest.rewards}}</td>
+        <td class="questRewards">{{quest.rewards}}</td>
         <td v-html="convertNote(quest.note)"></td>
     </tr>
 </table>  
@@ -44,16 +44,21 @@ export default {
 
 <style scoped>
 
-.questTable tr td{
+.questTable tr td, th{
     border: 1px solid;
     padding: 20px;
-    width: 20%;
     text-align: center;
 }
 
 .questTable {
-    border-collapse: collapse;
-    display: block;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.questName {
+}
+
+.questRewards {
+}
 </style>

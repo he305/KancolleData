@@ -1,7 +1,7 @@
 <template>
 <div>
     <h2>{{$route.params.shipName}}</h2>
-    <table v-for="stats in ship.stats" border="1px solid" class="shipTable">
+    <table v-for="stats in ship.stats" :key="stats.japanese_name" border="1px solid" class="shipTable">
         <tr>
             <td colspan="4">{{stats.japanese_name}}</td>
         </tr>
