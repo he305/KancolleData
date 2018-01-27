@@ -6,6 +6,7 @@ import ShipList from '@/components/ShipList'
 import ShipInfo from '@/components/ShipInfo'
 import Quests from '@/components/Quests'
 import EventInfo from '@/components/Event'
+import DevPage from '@/components/DevPage'
 
 import 'v-tab/dist/v-tab.css'
 
@@ -38,6 +39,11 @@ export default new Router({
       path: '/event',
       name: "EventInfo",
       component: EventInfo
+    },
+    {
+      path: '/dev',
+      name: 'DevPage',
+      component: DevPage
     }
   ]
 })

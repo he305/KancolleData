@@ -5,7 +5,7 @@
       <ol className="homelist" type="1">
           <li><del>Fix routing</del></li>
           <li><del>Migrate to vue</del></li>
-          <li>Fix rewards on quest page</li>
+          <li><del>Fix rewards on quest page</del></li>
           <li>Fix render of ship info</li>
           <li>Parse map pages</li>
       </ol>

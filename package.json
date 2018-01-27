@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "python-shell": "^0.4.0",
     "v-tab": "^3.0.3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

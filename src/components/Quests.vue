@@ -9,10 +9,11 @@
     </tr>
     <tr v-for="quest in quests" :key="quest.name">
         <td class="questName" :id="quest.name">{{quest.name}}</td>
-        <td>{{quest.requirements}}</td>
-        <td>{{quest.resources}}</td>
-        <td class="questRewards">{{quest.rewards}}</td>
-        <td v-html="convertNote(quest.note)"></td>
+        <td class="questRequirement">{{quest.requirements}}</td>
+        <td class="questResources">{{quest.resources}}</td>
+        <td class="questRewards" v-html="quest.rewards"></td>
+        <!-- <td class="questRewards">{{quest.rewards}}</td> -->
+        <td class="questNote" v-html="convertNote(quest.note)"></td>
     </tr>
 </table>  
 </template>
@@ -56,9 +57,20 @@ export default {
     margin-right: auto;
 }
 
-.questName {
+.questNote {
+    width: 5%;
 }
 
+.questName {
+    width: 5%;
+}
+.questResources {
+    width: 1%;
+    white-space: nowrap;
+}
 .questRewards {
+}
+.questRequirement {
+    width: 40%;
 }
 </style>
