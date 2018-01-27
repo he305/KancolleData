@@ -27,10 +27,41 @@ def parse_quests(html):
                 quest['requirements'] = cells[0].get_text().rstrip()
                 quest['resources'] = cells[2].get_text().rstrip()
 
-                if cells[4].find('a') == None:
+                if cells[4].find('a') is None:
                     quest['rewards'] = cells[4].get_text().rstrip()
                 else:
-                    quest['rewards'] = cells[4].find('a').get('href')
+                    #quest['rewards'] = cells[4].find('a').get('href')
+
+                    keyword = '/wiki/'
+                    text = ''
+
+                    a_href_list = cells[4].find_all('a')
+
+                    for a_href in a_href_list:
+                        print(a_href.get('href') + ' ' + text)
+                        if text.rstrip() in a_href.get('href').rstrip() and text != '':
+                            print('asdasd')
+                            continue
+
+
+                        if keyword in a_href.get('href'):
+                            if 'What_are_buckets' in a_href.get('href'):
+                                text += 'Bucket '
+                            elif 'Food_supply_'.lower() in a_href.get('href').lower():
+                                text += 'Food '
+                            elif '_Improvement_Arsenal' in a_href.get('href'):
+                                text += 'Screws '
+                            else:
+                                text += a_href.get('href').rstrip().split(keyword, 1)[1] + ' '
+                        else:
+                            text += a_href.get('href').rstrip() + ' '
+                    
+
+                    if not cells[4].get_text().rstrip() in text.rstrip() and len(a_href_list) == 0:
+                        text += cells[4].get_text().rstrip() + ' '
+                    quest['rewards'] = text 
+
+                    print(quest['rewards'])
                 quest['note'] = re.sub(r"(\w)(U)", r"\1 \2", cells[6].get_text().rstrip())
 
                 data.append(quest)
