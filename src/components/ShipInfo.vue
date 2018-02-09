@@ -50,6 +50,12 @@
             <td>Luck</td>
             <td>{{stats.luck}}</td>
         </tr>
+        <tr>
+            <td colspan="4">Equipment</td>
+        </tr>
+        <tr v-for="equip in stats.equipment" :key="equip">
+            <td colspan="4" v-html="equip"></td>
+        </tr>
     </table>
 </div>
 </template>

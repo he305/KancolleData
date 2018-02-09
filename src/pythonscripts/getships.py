@@ -48,13 +48,19 @@ def parse_ship_data(html, class_name):
             remodel_data['remodel_level'] = 1
 
         equipment = [
-            rows[14].find_all('td')[1].text.strip(),
-            rows[15].find_all('td')[1].text.strip(),
-            rows[16].find_all('td')[1].text.strip(),
-            rows[17].find_all('td')[1].text.strip()
+            str(rows[14].find_all('td')[1]),
+            str(rows[15].find_all('td')[1]),
+            str(rows[16].find_all('td')[1]),
+            str(rows[17].find_all('td')[1])
         ]
 
+        clear_td_reg = r'<\/?td.*?>'
+
+        for i, equip in enumerate(equipment):
+            equipment[i] = re.sub(clear_td_reg, '', equip).strip()
+
         remodel_data['equipment'] = equipment
+        print(remodel_data['equipment'])
 
         data['stats'].append(remodel_data)
 
@@ -144,3 +150,4 @@ if __name__ == "__main__":
     main()
 
 
+/

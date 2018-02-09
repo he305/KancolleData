@@ -31,7 +31,7 @@ def parse_quests(html):
                 
                 #Clear rewards from all html shit
                 tooltip_reg = '<div class="tooltip-contents">.*/div>'
-                url_reg = r'(/wiki/.*")'
+                url_reg = r'(\/wiki\/.*")'
                 td_reg = r'</*td>'
                 rewards = re.sub(tooltip_reg, '', rewards)
                 rewards = re.sub(td_reg, '', rewards)
