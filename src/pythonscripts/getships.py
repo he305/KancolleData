@@ -44,12 +44,13 @@ def parse_ship_data(html, class_name):
 
         clear_td_reg = r'<\/?td.*?>'
 
+        remodel_data["consumption"] = re.sub(clear_td_reg, '', str(rows[10]).replace('data-src', 'src'))
+
         if rows[11].find('td').b.text == "Remodel Level":
             remodel_data["remodel_level"] = re.sub(clear_td_reg, '', str(rows[12].find('td')).replace('data-src', 'src'))
         else:
             remodel_data['remodel_level'] = 1
-
-
+    
         equipment = [
             str(rows[14].find_all('td')[0]).replace('data-src', 'src') + str(rows[14].find_all('td')[1]),
             str(rows[15].find_all('td')[0]).replace('data-src', 'src') + str(rows[15].find_all('td')[1]),
@@ -59,7 +60,6 @@ def parse_ship_data(html, class_name):
 
         for i, equip in enumerate(equipment):
             equipment[i] = re.sub(clear_td_reg, '', equip).strip()
-
         remodel_data['equipment'] = equipment
 
         data['stats'].append(remodel_data)

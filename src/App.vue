@@ -35,7 +35,11 @@ export default {
 }
 
 nav {
-  margin: 10px 0px 0px 0px;
+  margin: 10px 10px 0px 0px;
+}
+
+nav a {
+  margin: 0px 20px 0px 0px;
 }
 
 .siteName {

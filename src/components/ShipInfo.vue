@@ -12,7 +12,8 @@
             <td colspan="4">{{stats.description}}</td>
         </tr>
         <tr>
-            <td colspan="4" v-html="stats.remodel_level"></td>
+            <td colspan="2"><b>Remodel level</b></td>
+            <td colspan="2"><strong v-html="stats.remodel_level"></strong></td>
         </tr>
         <tr>
             <td>HP</td>
@@ -51,9 +52,15 @@
             <td>{{stats.luck}}</td>
         </tr>
         <tr>
+            <td colspan="4"><b>Resource Consumption</b></td>
+        </tr>
+        <tr>
+            <td colspan="4" v-html="stats.consumption"></td>
+        </tr>
+        <tr>
             <td colspan="4"><b>Equipment</b></td>
         </tr>
-        <tr v-for="equip in stats.equipment" :key="equip">
+        <tr class="equip" v-for="equip in stats.equipment" :key="equip">
             <td colspan="4" v-html="equip"></td>
         </tr>
     </table>
@@ -89,10 +96,14 @@ export default {
     display: inline-block;
     border-collapse: collapse;
     margin: 10px;
-    text-align: center;
 }
 .shipTable tr td {
     padding: 10px;
+    text-align: center;
+}
+
+.equip {
+    height: 60px;
 }
 
 </style>
