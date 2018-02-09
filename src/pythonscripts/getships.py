@@ -42,25 +42,25 @@ def parse_ship_data(html, class_name):
 
         remodel_data['image'] = rows[1].find('a', href=True)['href']
 
+        clear_td_reg = r'<\/?td.*?>'
+
         if rows[11].find('td').b.text == "Remodel Level":
-            remodel_data["remodel_level"] = rows[12].find('td').b.text
+            remodel_data["remodel_level"] = re.sub(clear_td_reg, '', str(rows[12].find('td')).replace('data-src', 'src'))
         else:
             remodel_data['remodel_level'] = 1
 
-        equipment = [
-            str(rows[14].find_all('td')[1]),
-            str(rows[15].find_all('td')[1]),
-            str(rows[16].find_all('td')[1]),
-            str(rows[17].find_all('td')[1])
-        ]
 
-        clear_td_reg = r'<\/?td.*?>'
+        equipment = [
+            str(rows[14].find_all('td')[0]).replace('data-src', 'src') + str(rows[14].find_all('td')[1]),
+            str(rows[15].find_all('td')[0]).replace('data-src', 'src') + str(rows[15].find_all('td')[1]),
+            str(rows[16].find_all('td')[0]).replace('data-src', 'src') + str(rows[16].find_all('td')[1]),
+            str(rows[17].find_all('td')[0]).replace('data-src', 'src') + str(rows[17].find_all('td')[1])
+        ]
 
         for i, equip in enumerate(equipment):
             equipment[i] = re.sub(clear_td_reg, '', equip).strip()
 
         remodel_data['equipment'] = equipment
-        print(remodel_data['equipment'])
 
         data['stats'].append(remodel_data)
 
@@ -97,6 +97,7 @@ def parse_ships(html):
             data.append(ship_data)
             total_ships_done += 1
             print("Parsed " + str(total_ships_done) + " of " + str(len(ships)))
+
     return data
 
 def parse_equip(html):
@@ -141,13 +142,10 @@ def main():
     # data_equip = parse_equip(get_html("http://kancolle.wikia.com/wiki/Equipment"))
     # with open('equip.json', 'w') as f:
     #     json.dump(data_equip, f)
+    
     data_ships = parse_ships(get_html("http://kancolle.wikia.com/wiki/Ship"))
     with open('ships.json', 'w') as f:
         json.dump(data_ships, f)
 
-
 if __name__ == "__main__":
     main()
-
-
-/

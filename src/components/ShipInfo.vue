@@ -12,7 +12,7 @@
             <td colspan="4">{{stats.description}}</td>
         </tr>
         <tr>
-            <td colspan="4">Remodel level: {{stats.remodel_level}}</td>
+            <td colspan="4" v-html="stats.remodel_level"></td>
         </tr>
         <tr>
             <td>HP</td>
@@ -51,7 +51,7 @@
             <td>{{stats.luck}}</td>
         </tr>
         <tr>
-            <td colspan="4">Equipment</td>
+            <td colspan="4"><b>Equipment</b></td>
         </tr>
         <tr v-for="equip in stats.equipment" :key="equip">
             <td colspan="4" v-html="equip"></td>
