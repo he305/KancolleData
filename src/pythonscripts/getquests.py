@@ -28,50 +28,14 @@ def parse_quests(html):
                 quest['resources'] = cells[2].get_text().rstrip()
                 
                 rewards = str(cells[4]).replace('data-src', 'src')
-                print(rewards)
                 
-                deleteTooltipReg = '<div class="tooltip-contents">.*/div>'
-                fixURL = r'(/wiki/.*")'
-                rewards = re.sub(deleteTooltipReg, '', rewards)
-                quest['rewards'] = re.sub(fixURL, r'http://kancolle.wikia.com\1', rewards)
-                
-                ### TODO need to be worked out, later probably
-                # if cells[4].find('a') is None:
-                #     quest['rewards'] = cells[4].get_text().rstrip()
-                # else:
-                #     quest['rewards'] = cells[4].find('a').get('href')
-
-
-                    # keyword = '/wiki/'
-                    # text = ''
-
-                    # a_href_list = cells[4].find_all('a')
-
-                    # for a_href in a_href_list:
-                    #     print(a_href.get('href') + ' ' + text)
-                    #     if text.rstrip() in a_href.get('href').rstrip() and text != '':
-                    #         print('asdasd')
-                    #         continue
-
-
-                    #     if keyword in a_href.get('href'):
-                    #         if 'What_are_buckets' in a_href.get('href'):
-                    #             text += 'Bucket '
-                    #         elif 'Food_supply_'.lower() in a_href.get('href').lower():
-                    #             text += 'Food '
-                    #         elif '_Improvement_Arsenal' in a_href.get('href'):
-                    #             text += 'Screws '
-                    #         else:
-                    #             text += a_href.get('href').rstrip().split(keyword, 1)[1] + ' '
-                    #     else:
-                    #         text += a_href.get('href').rstrip() + ' '
-
-                    # text += 'test'
-
-                    # if not cells[4].get_text().rstrip() in text.rstrip() and len(a_href_list) == 0:
-                    #     text += cells[4].get_text().rstrip() + ' '
-                    # quest['rewards'] = text 
-
+                #Clear rewards from all html shit
+                tooltip_reg = '<div class="tooltip-contents">.*/div>'
+                url_reg = r'(/wiki/.*")'
+                td_reg = r'</*td>'
+                rewards = re.sub(tooltip_reg, '', rewards)
+                rewards = re.sub(td_reg, '', rewards)
+                quest['rewards'] = re.sub(url_reg, r'http://kancolle.wikia.com\1', rewards)
 
                 quest['note'] = re.sub(r"(\w)(U)", r"\1 \2", cells[6].get_text().rstrip())
 

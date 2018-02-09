@@ -7,6 +7,7 @@ import ShipInfo from '@/components/ShipInfo'
 import Quests from '@/components/Quests'
 import EventInfo from '@/components/Event'
 import DevPage from '@/components/DevPage'
+import Threads from '@/components/Threads'
 
 import 'v-tab/dist/v-tab.css'
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/event',
       name: "EventInfo",
       component: EventInfo
+    },
+    {
+      path: '/threads',
+      name: "Threads",
+      component: Threads
     },
     {
       path: '/dev',

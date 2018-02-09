@@ -9,7 +9,7 @@ def get_html(url):
     return response.read()
 
 
-def parse_ship_data(html):
+def parse_ship_data(html, class_name):
     data = {}
     soup = BeautifulSoup(html, 'lxml')
     tables = soup.find_all('table', class_='typography-xl-optout infobox infobox-kai infobox-ship')
@@ -17,6 +17,7 @@ def parse_ship_data(html):
     name = tables[0].find_all('tr')[0].td.p.span.b.text
 
     data['name'] = name.strip()
+    data['class_name'] = class_name.strip()
 
     data['stats'] = []
     
@@ -85,7 +86,7 @@ def parse_ships(html):
                 continue
 
             print("Parsing " + ship.text + "....")
-            ship_data = parse_ship_data(get_html("http://kancolle.wikia.com" + ship['href']))
+            ship_data = parse_ship_data(get_html("http://kancolle.wikia.com" + ship['href']), name)
             ships_done.append(ship['href'])
             data.append(ship_data)
             total_ships_done += 1
