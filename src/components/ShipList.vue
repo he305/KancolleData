@@ -46,4 +46,9 @@ ul {
 input {
     margin-bottom: 15px;
 }
+
+img {
+    width: 200px;
+    height: 275px;
+}
 </style>

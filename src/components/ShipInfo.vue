@@ -106,4 +106,9 @@ export default {
     height: 60px;
 }
 
+img {
+    width: 200px;
+    height: 275px;
+}
+
 </style>
